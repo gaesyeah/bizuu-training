@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const StyledFooter = styled.View`
+const Container = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,9 +13,14 @@ export const StyledFooter = styled.View`
   z-index: 2;
 `;
 
-export const FooterText = styled.Text`
+const Text = styled.Text`
   font-family: ${({theme}) => theme.FONTS.MONTSERRAT};
   font-size: 13px;
   font-weight: 400;
   color: ${({theme}) => theme.COLORS.BLACK};
 `;
+
+export const StyledFooter = {
+  Container,
+  Text,
+};

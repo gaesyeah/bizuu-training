@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Hambúrguer Clássico",
+      "brand": "Gourmet Burger",
+      "description": "Delicioso hambúrguer de carne com queijo, alface e tomate.",
+      "photo": "https://www.cnnbrasil.com.br/viagemegastronomia/wp-content/uploads/sites/5/2022/05/origem-do-hambuguer-cnn4.jpg?w=1200&h=900&crop=1",
+      "price": "24.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Pizza Margherita",
+      "brand": "Pizzaria do Chef",
+      "description": "Pizza tradicional com molho de tomate, mozzarella e manjericão.",
+      "photo": "https://irp.cdn-website.com/33406c6e/dms3rep/multi/margherita-7d163fb8.jpg",
+      "price": "49.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Macarronada ao Molho Bolonhesa",
+      "brand": "Trattoria Italiana",
+      "description": "Delicioso macarrão com molho bolonhesa caseiro.",
+      "photo": "https://www.sabornamesa.com.br/media/k2/items/cache/ead47d36e50510c345eb86a3568f763f_XL.jpg",
+      "price": "29.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Sushi Mix",
+      "brand": "Sushi Bar",
+      "description": "Combo de sushis variados frescos e saborosos.",
+      "photo": "https://s3-sa-east-1.amazonaws.com/deliveryon-uploads/products/sujirusushi/492_605d282597c56.png",
+      "price": "79.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Salada Caesar",
+      "brand": "Salad House",
+      "description": "Salada fresca com frango grelhado, croutons e molho Caesar.",
+      "photo": "https://static.itdg.com.br/images/1200-675/3f0787cb6db2f0db10269fc45bd8abee/shutterstock-1078415420.jpg",
+      "price": "19.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Tacos de Carne",
+      "brand": "Taqueria Delicia",
+      "description": "Tacos recheados com carne, guacamole e salsa fresca.",
+      "photo": "https://s2-receitas.glbimg.com/wrRQNLOphOIXEpI96-N3c4W9WH8=/0x0:1200x675/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2024/F/v/rTgtspQiAxgosRSkTUtQ/taco-mexicano.jpg",
+      "price": "22.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Risoto de Frutos do Mar",
+      "brand": "Restaurante Marítimo",
+      "description": "Risoto cremoso com camarões, lulas e ervilhas.",
+      "photo": "https://www.sumerbol.com.br/uploads/images/2017/10/risoto-de-frutos-do-mar-1509122326.jpg",
+      "price": "39.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Pasta à Carbonara",
+      "brand": "Cozinha Italiana",
+      "description": "Deliciosa pasta com molho carbonara, bacon e queijo parmesão.",
+      "photo": "https://www.thespruceeats.com/thmb/ovIQQQxQajADuIE2lqhgqq7ppyE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/pasta-carbonara-recipe-5210168-hero-01-80090e56abc04ca19d88ebf7fad1d157.jpg",
+      "price": "32.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 9,
+      "name": "Ceviche",
+      "brand": "Cevicheria Peruana",
+      "description": "Ceviche fresco de peixe marinado em limão com cebola roxa.",
+      "photo": "https://blog.ceraflame.com.br/wp-content/uploads/2021/01/ceviche.jpg",
+      "price": "28.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Pudim de Leite",
+      "brand": "Doces da Vovó",
+      "description": "Pudim de leite condensado com calda de caramelo.",
+      "photo": "https://www.meucadernodereceitas.com.br/wp-content/uploads/2023/05/Mini-pudim-para-venda.webp",
+      "price": "14.99",
+      "createdAt": "2024-10-20T10:00:00Z",
+      "updatedAt": "2024-10-20T10:00:00Z"
+    }
+  ]
+}

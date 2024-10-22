@@ -1,21 +1,26 @@
 import React from 'react';
-import {Cart, CartQuantity, Logo, StyledHeader} from './styles';
+import {StyledHeader} from './styles';
 import FontAwesome6 from '@react-native-vector-icons/fontawesome6';
+import {useCartContext} from '../../contexts/CartContext';
 
 const Header: React.FC = () => {
+  const {cartProducts, setOpenCart} = useCartContext();
+
   const cartIcon = (
     <FontAwesome6 name="cart-shopping" iconStyle="solid" size={18} />
   );
 
   return (
-    <StyledHeader>
-      <Logo>Bizuu</Logo>
+    <StyledHeader.Container>
+      <StyledHeader.Logo>Bizuu</StyledHeader.Logo>
 
-      <Cart>
+      <StyledHeader.Cart.Button onPress={() => setOpenCart(true)}>
         {cartIcon}
-        <CartQuantity>0</CartQuantity>
-      </Cart>
-    </StyledHeader>
+        <StyledHeader.Cart.Quantity>
+          {cartProducts.length}
+        </StyledHeader.Cart.Quantity>
+      </StyledHeader.Cart.Button>
+    </StyledHeader.Container>
   );
 };
 

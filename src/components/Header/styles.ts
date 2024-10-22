@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const StyledHeader = styled.View`
+const Container = styled.View`
   height: 48px;
   display: flex;
   flex-direction: row;
@@ -13,7 +13,7 @@ export const StyledHeader = styled.View`
   z-index: 1;
 `;
 
-export const Logo = styled.Text`
+const Logo = styled.Text`
   margin-bottom: 5px;
   margin-left: 17px;
   font-size: 32px;
@@ -22,7 +22,7 @@ export const Logo = styled.Text`
   font-family: ${({theme}) => theme.FONTS.MONTSERRAT};
 `;
 
-export const Cart = styled.View`
+const CartButton = styled.TouchableOpacity`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,10 +35,19 @@ export const Cart = styled.View`
   margin-right: 17px;
 `;
 
-export const CartQuantity = styled.Text`
+const CartQuantity = styled.Text`
   font-size: 13px;
   margin-right: 4px;
   font-weight: 700;
   color: ${({theme}) => theme.COLORS.BLACK};
   font-family: ${({theme}) => theme.FONTS.MONTSERRAT};
 `;
+
+export const StyledHeader = {
+  Container,
+  Logo,
+  Cart: {
+    Button: CartButton,
+    Quantity: CartQuantity,
+  },
+};

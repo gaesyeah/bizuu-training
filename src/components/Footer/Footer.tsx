@@ -1,11 +1,13 @@
 import React from 'react';
-import {FooterText, StyledFooter} from './styles';
+import {StyledFooter} from './styles';
 
 const Footer: React.FC = () => {
   return (
-    <StyledFooter>
-      <FooterText>Bizuu © Todos os direitos reservados</FooterText>
-    </StyledFooter>
+    <StyledFooter.Container>
+      <StyledFooter.Text>
+        Bizuu © Todos os direitos reservados
+      </StyledFooter.Text>
+    </StyledFooter.Container>
   );
 };
 
