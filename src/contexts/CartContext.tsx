@@ -23,11 +23,7 @@ type CartStateContext = CartOpenedState & CartState;
 const CartContext = createContext<CartStateContext | undefined>(undefined);
 export default CartContext;
 
-export const CartProvider: FC<{children: ReactNode}> = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
+export const CartProvider: FC<{children: ReactNode}> = ({children}) => {
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [cartProducts, setCartProducts] = useState<Product[]>([]);
 

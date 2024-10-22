@@ -54,7 +54,7 @@ const ProductButton = styled.TouchableOpacity<{isProductOnCart: boolean}>`
   border: none;
   position: absolute;
   bottom: 0;
-  opacity: ${({isProductOnCart}) => (isProductOnCart ? '0.85' : 'unset')};
+  opacity: ${({isProductOnCart}) => (isProductOnCart ? 0.85 : 1)};
   background-color: ${({theme}) => theme.COLORS.RED};
   width: 100%;
   height: 32px;

@@ -7,6 +7,7 @@ import {StyledContainer} from './styles';
 import {CartProvider} from './contexts/CartContext';
 import ProductsContainer from './screens/Products/ProductsContainer';
 import {QueryClient, QueryClientProvider} from 'react-query';
+import Cart from './components/Cart/Cart';
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <Header />
             <Footer />
 
+            <Cart />
             <ProductsContainer />
           </StyledContainer>
         </ThemeProvider>
