@@ -8,15 +8,15 @@ import {
   useMemo,
   useState,
 } from 'react';
-import {Product} from '../types/product';
+import {ProductInCart} from '../types/product';
 
 type CartOpenedState = {
   openCart: boolean;
   setOpenCart: Dispatch<SetStateAction<boolean>>;
 };
 type CartState = {
-  cartProducts: Product[];
-  setCartProducts: Dispatch<SetStateAction<Product[]>>;
+  cartProducts: ProductInCart[];
+  setCartProducts: Dispatch<SetStateAction<ProductInCart[]>>;
 };
 type CartStateContext = CartOpenedState & CartState;
 
@@ -25,7 +25,9 @@ export default CartContext;
 
 export const CartProvider: FC<{children: ReactNode}> = ({children}) => {
   const [openCart, setOpenCart] = useState<boolean>(false);
-  const [cartProducts, setCartProducts] = useState<Product[]>([]);
+  const [cartProducts, setCartProducts] = useState<ProductInCart[]>([]);
+
+  /* const priceInNumber = (price: number) => parseInt(price.) */
 
   const memoValue = useMemo(
     () => ({openCart, setOpenCart, cartProducts, setCartProducts}),

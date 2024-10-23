@@ -17,14 +17,12 @@ const ProductComponent: React.FC<{product: Product; isLoading: boolean}> = ({
         previous.filter(prod => prod.id !== id),
       );
     }
-    setCartProducts(previous => [...previous, product]);
+    setCartProducts(previous => [...previous, {...product, quantity: 1}]);
   };
 
   return (
     <StyledProduct.Container style={StyledProduct.styleSheet.shadow}>
-      <StyledProduct.Photo.Container>
-        <StyledProduct.Photo.Image source={{uri}} resizeMode="cover" />
-      </StyledProduct.Photo.Container>
+      <StyledProduct.Photo source={{uri}} resizeMode="cover" />
 
       <StyledProduct.Box.Container>
         <StyledProduct.Info.Container>
@@ -32,7 +30,7 @@ const ProductComponent: React.FC<{product: Product; isLoading: boolean}> = ({
 
           <StyledProduct.Info.Price>
             <StyledProduct.Info.PriceText>
-              R${price.replace('.00', '')}
+              R${price}
             </StyledProduct.Info.PriceText>
           </StyledProduct.Info.Price>
         </StyledProduct.Info.Container>

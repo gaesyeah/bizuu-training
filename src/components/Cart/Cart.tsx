@@ -4,7 +4,8 @@ import {useCartContext} from '../../contexts/CartContext';
 import {Animated, Dimensions, Touchable, TouchableOpacity} from 'react-native';
 
 const Cart: React.FC = () => {
-  const {openCart, setOpenCart} = useCartContext();
+  const {cartProducts, setCartProducts, openCart, setOpenCart} =
+    useCartContext();
   const isCartOpen = openCart;
 
   const screenWidth = Dimensions.get('window').width;
@@ -29,6 +30,18 @@ const Cart: React.FC = () => {
     animate(right);
   }, [isCartOpen]);
 
+  const finalPrice = cartProducts.reduce(
+    (accumulator, {price, quantity}) => accumulator + price * quantity,
+    0,
+  );
+
+  const isCartEmpty = cartProducts.length === 0;
+
+  const finishOrder = () => {
+    setCartProducts([]);
+    setOpenCart(false);
+  };
+
   return (
     <>
       {isCartOpen && (
@@ -43,6 +56,26 @@ const Cart: React.FC = () => {
         <StyledCart.Container.Title>
           Carrinho de Compras
         </StyledCart.Container.Title>
+
+        <StyledCart.FinishOrder.Container>
+          <StyledCart.FinishOrder.PriceContainer>
+            <StyledCart.FinishOrder.PriceText>
+              Total:
+            </StyledCart.FinishOrder.PriceText>
+            <StyledCart.FinishOrder.PriceText>
+              R$ {finalPrice}
+            </StyledCart.FinishOrder.PriceText>
+          </StyledCart.FinishOrder.PriceContainer>
+
+          <StyledCart.FinishOrder.Button.Container
+            isCartEmpty={isCartEmpty}
+            disabled={isCartEmpty}
+            onPress={finishOrder}>
+            <StyledCart.FinishOrder.Button.Text>
+              {isCartEmpty ? 'CARRINHO VAZIO' : 'FINALIZAR COMPRA'}
+            </StyledCart.FinishOrder.Button.Text>
+          </StyledCart.FinishOrder.Button.Container>
+        </StyledCart.FinishOrder.Container>
       </StyledCart.Container.Cart>
     </>
   );

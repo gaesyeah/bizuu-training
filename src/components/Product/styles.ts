@@ -26,15 +26,10 @@ const Container = styled.View`
   border-radius: 10px;
 `;
 
-const ImageContainer = styled.View`
+const Photo = styled.Image`
+  border-radius: 10px 10px 0 0;
   height: 50%;
   width: 100%;
-`;
-
-const Image = styled.Image`
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-  height: 100%;
 `;
 
 const SubContainer = styled.View`
@@ -119,10 +114,7 @@ const ProductDescription = styled.Text`
 export const StyledProduct = {
   Container,
   styleSheet,
-  Photo: {
-    Container: ImageContainer,
-    Image,
-  },
+  Photo,
   Box: {
     Container: SubContainer,
     Button: ProductButton,
