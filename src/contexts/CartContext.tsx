@@ -15,8 +15,8 @@ type CartOpenedState = {
   setOpenCart: Dispatch<SetStateAction<boolean>>;
 };
 type CartState = {
-  cartProducts: ProductInCart[];
-  setCartProducts: Dispatch<SetStateAction<ProductInCart[]>>;
+  productsInCart: ProductInCart[];
+  setProductsInCart: Dispatch<SetStateAction<ProductInCart[]>>;
 };
 type CartStateContext = CartOpenedState & CartState;
 
@@ -25,13 +25,11 @@ export default CartContext;
 
 export const CartProvider: FC<{children: ReactNode}> = ({children}) => {
   const [openCart, setOpenCart] = useState<boolean>(false);
-  const [cartProducts, setCartProducts] = useState<ProductInCart[]>([]);
-
-  /* const priceInNumber = (price: number) => parseInt(price.) */
+  const [productsInCart, setProductsInCart] = useState<ProductInCart[]>([]);
 
   const memoValue = useMemo(
-    () => ({openCart, setOpenCart, cartProducts, setCartProducts}),
-    [openCart, cartProducts],
+    () => ({openCart, setOpenCart, productsInCart, setProductsInCart}),
+    [openCart, productsInCart],
   );
 
   return (

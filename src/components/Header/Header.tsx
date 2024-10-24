@@ -4,7 +4,7 @@ import FontAwesome6 from '@react-native-vector-icons/fontawesome6';
 import {useCartContext} from '../../contexts/CartContext';
 
 const Header: React.FC = () => {
-  const {cartProducts, setOpenCart} = useCartContext();
+  const {productsInCart, setOpenCart} = useCartContext();
 
   const cartIcon = (
     <FontAwesome6 name="cart-shopping" iconStyle="solid" size={18} />
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
       <StyledHeader.Cart.Button onPress={() => setOpenCart(true)}>
         {cartIcon}
         <StyledHeader.Cart.Quantity>
-          {cartProducts.length}
+          {productsInCart.length}
         </StyledHeader.Cart.Quantity>
       </StyledHeader.Cart.Button>
     </StyledHeader.Container>

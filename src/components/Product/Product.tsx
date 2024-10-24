@@ -7,17 +7,17 @@ const ProductComponent: React.FC<{product: Product; isLoading: boolean}> = ({
   isLoading,
 }) => {
   const {id, price, description, name, photo: uri} = product;
-  const {cartProducts, setCartProducts} = useCartContext();
+  const {productsInCart, setProductsInCart} = useCartContext();
 
-  const isProductOnCart = cartProducts.some(prod => prod.id === id);
+  const isProductOnCart = productsInCart.some(prod => prod.id === id);
 
   const handleCart = () => {
     if (isProductOnCart) {
-      return setCartProducts(previous =>
+      return setProductsInCart(previous =>
         previous.filter(prod => prod.id !== id),
       );
     }
-    setCartProducts(previous => [...previous, {...product, quantity: 1}]);
+    setProductsInCart(previous => [...previous, {...product, quantity: 1}]);
   };
 
   return (

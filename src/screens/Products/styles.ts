@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
 const styleSheet = StyleSheet.create({
-  adjust: {minHeight: '100%', paddingHorizontal: 35, paddingVertical: 35},
+  flatList: {minHeight: '100%', paddingHorizontal: 35, paddingVertical: 35},
 });
 
 const Container = styled.View`

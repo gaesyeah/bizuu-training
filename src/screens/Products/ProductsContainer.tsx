@@ -55,7 +55,7 @@ const ProductsContainer: React.FC = () => {
             key={item.id}
           />
         )}
-        contentContainerStyle={StyledProducts.styleSheet.adjust}
+        contentContainerStyle={StyledProducts.styleSheet.flatList}
       />
     </StyledProducts.Container>
   );

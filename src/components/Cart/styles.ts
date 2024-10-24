@@ -2,7 +2,6 @@ import {Animated} from 'react-native';
 import styled from 'styled-components/native';
 
 const CartContainer = styled(Animated.View)`
-  flex-direction: row;
   justify-content: center;
   height: 100%;
   width: 75%;
@@ -28,11 +27,13 @@ const TouchCloseCart = styled.TouchableOpacity<{isCartOpen: boolean}>`
 `;
 
 const CartTitle = styled.Text`
+  text-align: center;
   margin-top: 7px;
   font-size: 28px;
   font-weight: 700;
   color: ${({theme}) => theme.COLORS.WHITE};
   font-family: ${({theme}) => theme.FONTS.MONTSERRAT};
+  margin-bottom: 16px;
 `;
 
 const FinishOrderContainer = styled.View`
