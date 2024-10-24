@@ -15,8 +15,7 @@ const styleSheet = StyleSheet.create({
 });
 
 const Container = styled.View`
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
   flex-direction: column;

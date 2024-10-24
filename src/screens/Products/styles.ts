@@ -1,16 +1,26 @@
 import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
-export const styleSheet = StyleSheet.create({
-  padding: {paddingHorizontal: 35, paddingVertical: 35},
+const styleSheet = StyleSheet.create({
+  adjust: {minHeight: '100%', paddingHorizontal: 35, paddingVertical: 35},
 });
 
-export const Container = styled.View`
+const Container = styled.View`
   width: 100%;
   margin-top: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const SearchProductInput = styled.TextInput`
+  height: 38px;
+  padding-left: 14px;
+  width: 65%;
+  border-radius: 5px;
+  border: 1px solid ${({theme}) => theme.COLORS.GRAY};
+  margin-top: 70px;
+  font-family: ${({theme}) => theme.FONTS.MONTSERRAT};
 `;
 
 export const InfoText = styled.Text`
@@ -25,4 +35,5 @@ export const InfoText = styled.Text`
 export const StyledProducts = {
   Container,
   styleSheet,
+  SearchProductInput,
 };
