@@ -81,26 +81,6 @@ const InfoText = styled.Text`
   color: ${({theme}) => theme.COLORS.GRAY};
 `;
 
-const ProductPrice = styled.View`
-  width: auto;
-  background-color: ${({theme}) => theme.COLORS.GRAY};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 7px 4px 7px;
-  border-radius: 4px;
-`;
-
-const ProductPriceText = styled.Text`
-  overflow: hidden;
-  max-width: auto;
-  min-height: auto;
-  font-size: 16px;
-  font-weight: 700;
-  font-family: ${({theme}) => theme.FONTS.MONTSERRAT};
-  color: ${({theme}) => theme.COLORS.WHITE};
-`;
-
 const ProductDescription = styled.Text`
   font-family: ${({theme}) => theme.FONTS.MONTSERRAT};
   max-width: 192px;
@@ -123,7 +103,5 @@ export const StyledProduct = {
   Info: {
     Container: InfoContainer,
     Text: InfoText,
-    Price: ProductPrice,
-    PriceText: ProductPriceText,
   },
 };

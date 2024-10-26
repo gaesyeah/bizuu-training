@@ -1,20 +1,25 @@
 import React, {useEffect, useRef} from 'react';
 import {StyledCart} from './styles';
 import {useCartContext} from '../../contexts/CartContext';
-import {Animated, Dimensions, FlatList} from 'react-native';
+import {Animated, Dimensions, FlatList, View} from 'react-native';
 import ProductInCart from './ProductInCart/ProductInCart';
 
 const Cart: React.FC = () => {
-  const {productsInCart, setProductsInCart, openCart, setOpenCart} =
-    useCartContext();
+  const {
+    productsInCart,
+    setProductsInCart,
+    openCart,
+    setOpenCart,
+    formatPrice,
+  } = useCartContext();
   const isCartOpen = openCart;
 
   const screenWidth = Dimensions.get('window').width;
   const useAnimation = (multiplier: number) => {
     return useRef(new Animated.Value(-screenWidth * multiplier)).current;
   };
-  const left = 0.25;
-  const right = 0.75;
+  const left = 0.15;
+  const right = 0.85;
   const animateRight = useAnimation(right);
   const animateLeft = useAnimation(left);
 
@@ -31,12 +36,10 @@ const Cart: React.FC = () => {
     animate(right);
   }, [isCartOpen]);
 
-  const finalPrice = productsInCart
-    .reduce(
-      (accumulator, {price, quantity}) => accumulator + price * quantity,
-      0,
-    )
-    .toFixed(2);
+  const finalPrice = productsInCart.reduce(
+    (accumulator, {price, quantity}) => accumulator + price * quantity,
+    0,
+  );
 
   const isCartEmpty = productsInCart.length === 0;
 
@@ -56,16 +59,20 @@ const Cart: React.FC = () => {
       )}
 
       <StyledCart.Container.Cart style={{right: animateRight}}>
-        <StyledCart.Container.Title>
-          Carrinho de Compras
-        </StyledCart.Container.Title>
+        <StyledCart.Container.Box>
+          <StyledCart.Container.Title>
+            Carrinho de Compras
+          </StyledCart.Container.Title>
 
-        <FlatList
-          data={productsInCart}
-          renderItem={({item}) => (
-            <ProductInCart productInCart={item} key={item.id} />
-          )}
-        />
+          <StyledCart.Container.List>
+            <FlatList
+              data={productsInCart}
+              renderItem={({item}) => (
+                <ProductInCart productInCart={item} key={item.id} />
+              )}
+            />
+          </StyledCart.Container.List>
+        </StyledCart.Container.Box>
 
         <StyledCart.FinishOrder.Container>
           <StyledCart.FinishOrder.PriceContainer>
@@ -73,7 +80,7 @@ const Cart: React.FC = () => {
               Total:
             </StyledCart.FinishOrder.PriceText>
             <StyledCart.FinishOrder.PriceText>
-              R$ {finalPrice}
+              {formatPrice(finalPrice)}
             </StyledCart.FinishOrder.PriceText>
           </StyledCart.FinishOrder.PriceContainer>
 

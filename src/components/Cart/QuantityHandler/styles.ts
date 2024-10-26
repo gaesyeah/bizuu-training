@@ -1,8 +1,6 @@
 import styled from 'styled-components/native';
 
 const QuantityHandlerContainer = styled.View`
-  height: 26px;
-  width: 60px;
   border-radius: 8px;
   border: 1px solid ${({theme}) => theme.COLORS.GRAY};
   display: flex;
@@ -12,8 +10,8 @@ const QuantityHandlerContainer = styled.View`
 `;
 
 const QuantityHandlerButton = styled.TouchableOpacity`
-  height: 80%;
-  width: 30%;
+  height: 20px;
+  width: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +27,7 @@ const QuantityHandlerText = styled.Text<{isButton?: boolean}>`
 `;
 
 const QuantityHandlerSeparator = styled.View`
-  height: 80%;
+  height: 16px;
   width: 1px;
   background-color: ${({theme}) => theme.COLORS.BLACK};
 `;

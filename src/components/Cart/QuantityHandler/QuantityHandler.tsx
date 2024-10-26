@@ -1,10 +1,11 @@
 import {useCartContext} from '../../../contexts/CartContext';
 import {ProductInCart} from '../../../types/product';
 import {QuantityHandler} from './styles';
+import FontAwesome6 from '@react-native-vector-icons/fontawesome6';
 
-const QuantityHandlerComponent: React.FC<
-  Pick<ProductInCart, 'id' | 'quantity'>
-> = ({id, quantity}) => {
+type IdAndQuantity = Pick<ProductInCart, 'id' | 'quantity'>;
+
+const QuantityHandlerComponent: React.FC<IdAndQuantity> = ({id, quantity}) => {
   const {setProductsInCart} = useCartContext();
 
   const handleQuantity = (operation: 'sum' | 'sub') => {
@@ -22,10 +23,18 @@ const QuantityHandlerComponent: React.FC<
     });
   };
 
+  const trashIcon = (
+    <FontAwesome6 name="trash-can" color="black" iconStyle="solid" size={11} />
+  );
+
   return (
     <QuantityHandler.Container>
       <QuantityHandler.Button onPress={() => handleQuantity('sub')}>
-        <QuantityHandler.Text isButton={true}>-</QuantityHandler.Text>
+        {quantity === 1 ? (
+          trashIcon
+        ) : (
+          <QuantityHandler.Text isButton={true}>-</QuantityHandler.Text>
+        )}
       </QuantityHandler.Button>
 
       <QuantityHandler.Separator />

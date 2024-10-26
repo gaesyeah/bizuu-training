@@ -1,6 +1,7 @@
 import {Product} from '../../types/product';
 import {StyledProduct} from './styles';
 import {useCartContext} from '../../contexts/CartContext';
+import Price from '../Price/Price';
 
 const ProductComponent: React.FC<{product: Product; isLoading: boolean}> = ({
   product,
@@ -28,11 +29,7 @@ const ProductComponent: React.FC<{product: Product; isLoading: boolean}> = ({
         <StyledProduct.Info.Container>
           <StyledProduct.Info.Text>{name}</StyledProduct.Info.Text>
 
-          <StyledProduct.Info.Price>
-            <StyledProduct.Info.PriceText>
-              R${price}
-            </StyledProduct.Info.PriceText>
-          </StyledProduct.Info.Price>
+          <Price price={price} size={'big'} />
         </StyledProduct.Info.Container>
 
         <StyledProduct.Box.Description>

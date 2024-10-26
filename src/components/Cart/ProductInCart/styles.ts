@@ -9,11 +9,12 @@ const ProductInCartContainer = styled.View`
   border-radius: 8px;
   align-self: center;
   margin-top: 12px;
+  position: relative;
 `;
 
 const ProductInCartSubContainer = styled.View`
   height: 100%;
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +22,7 @@ const ProductInCartSubContainer = styled.View`
 
 const Photo = styled.Image`
   height: 100%;
-  width: 50%;
+  width: 40%;
   border-radius: 8px 0 0 8px;
   align-self: flex-start;
 `;
@@ -34,6 +35,12 @@ const ProductInCartName = styled.Text`
   margin-bottom: 4px;
 `;
 
+const QtdPrice = styled.View`
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+`;
+
 export const StyledProductInCart = {
   Container: ProductInCartContainer,
   Photo,
@@ -41,4 +48,5 @@ export const StyledProductInCart = {
     Container: ProductInCartSubContainer,
     Name: ProductInCartName,
   },
+  QtdPrice,
 };
